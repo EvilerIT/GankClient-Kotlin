@@ -27,15 +27,16 @@ android {
 }
 
 dependencies {
+    kapt "com.android.databinding:compiler:2.3.0"
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.0.1'
 
 
     def dependencies = rootProject.ext.dependencies
 
+    compile dependencies.supportV7
     compile dependencies.supportDesign
     compile dependencies.supportRecyclerview
     compile dependencies.supportCardView
